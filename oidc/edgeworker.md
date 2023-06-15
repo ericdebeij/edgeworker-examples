@@ -23,7 +23,7 @@ Parameters:
 Used upon succesful authentication at the IDP to request the JWT tokens, generate the token and perform the redirect to the origal requested url.
 
 Parameters:
-- code: Part of the OIDC code flow. The code will be used by the EdgeWorker to verify the login with the IDP.
+- code: Part of the OIDC code flow. The code will be used by the callback routine to verify the login with the IDP.
 
 Cookies created:
 - \_\_token\_\_: the generated Akamai Token

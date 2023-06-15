@@ -48,34 +48,7 @@ Check the [wellknown](https://accounts.google.com/.well-known/openid-configurati
 1. Create a rule called /oidc/token
 - IF PATH matches /oidc/token
   - Caching no-store
-  - Path override to /token
-  - Origin server IDP hostname, forward host header origin hostname
+  - Path override to the path mentioned in the well-known token_endpoint
+  - Origin server host in the well-known token endpoint, forward host header origin hostname
 
-![IDPToken](images/pm_idp.jpg)
-
-
-
-## New Property Manager Property for Login Site
-A new Property Manager configuration will need to be set up for the Login site. You can use Netstorage as the origin serving a placeholder home page. You'll also need to create a new certificate for this site in Akamai Control Panel.
-
-Other than the basic configuration, you'll need to add specific configuraton as described below.
-
-
-
-### Rules
-Property Manager should be configured like so:-
-
-1. Create an empty rule called "Edgeworker"
-   - IF path matches /oidc/*
-      - Edgeworkers behaviour
-      - Allow POST
-      - Cache Rule = no-store (important to make sure Set-Cookie gets returned)
-
-![Edgeworker Rule](images/edgeworker.png)
-
-2. Create a child rule of "Authentication" called "OpenID Token Validation". This rule needs to exist because the Edgeworker cannot talk directly to your OpenID provider so the token validation requests need to proxy through Akamai. We therefore treat the OpenID Provider as an origin for any requests that are made to /oidc/token
-   - IF path matches /oidc/token
-     - Origin behaviour = Hostname = <token hostname>, Forward Host Header = origin hostname
-     - Path overriden to OIDC_TOKEN_PATH
- 
- ![OIDC Token Validation](images/oidctoken.png)
+![IDPToken](images/pm_idp_token.jpg)

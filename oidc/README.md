@@ -12,7 +12,7 @@ The basic idea is that the website is protected using a token which is stored in
 
 The token can be a standard Akamai Token or the JWT token as provided by the IDP.
 - An Akamai Token is a token signed using HMAC-SHA256 which is valid for a limited time. [Akamai Token 2 Verification](https://techdocs.akamai.com/property-mgr/docs/auth-token-2-0-ver) is a standard behavior of the [Akamai Property Manager](https://techdocs.akamai.com/property-mgr/docs).
-- A JWT token needs can be validated using an EdgeWorker. Example code [JWT validation using JWKS](https://github.com/ericdebeij/edgeworker-examples/jwks).
+- A JWT token needs can be validated using an EdgeWorker. Example code [JWT validation using JWKS](https://github.com/ericdebeij/edgeworker-examples).
 
 _In the setup of this example an Akamai Token is used. The Edgeworker will generate both an EdgeToken (\_\_token\_\_ as well as a JSON Web Token \_\_jwt\_\_)_
 
@@ -42,4 +42,4 @@ Not implemented yet, amongs others:
 - More fine-grained authorization
 
 ## Credits
-Thanks Ian Cass for your contributions! Ian Cass variations can be found at
+Thanks Ian Cass for your contributions! Ian Cass variations can be found at https://github.com/IanCassTwo/edgeworker-oidc 
