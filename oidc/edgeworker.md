@@ -14,7 +14,7 @@ Authorization requires rules at the IDP or application logic. It can use the cla
 The OIDC EdgeWorker currently implements a number of resources. The selection of the resource is based on the last path element in the url used.
 
 ### /oidc/login?url=redirect-url
-Initiate the login process. The redirect url will be temporary stored in a cookie associated
+Initiate the login process. The redirect url will be temporary stored in a cookie.
 
 Parameters:
 - url: Used upon successful login to redirect to the original requested url. 
