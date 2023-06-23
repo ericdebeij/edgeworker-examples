@@ -45,7 +45,12 @@ export async function onClientRequest(request) {
       jwt: jwtJSON,
       verified: true
     };
-    request.respondWith(200, {"Content-Type": ["application/json"]}, JSON.stringify(result));
+
+    // For debugging"
+    if (request.path.endsWith('/debug')) request.respondWith(200, {"Content-Type": ["application/json"]}, JSON.stringify(result));
+
+    // Additional claims to be verified in the jwtJSON object
+    // your code
 
   } catch (error) {
     logger.log('Error: %s', error.message);

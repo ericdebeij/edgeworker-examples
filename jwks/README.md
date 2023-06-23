@@ -2,8 +2,14 @@
 
 **DISCLAIMER: This code is designed to be used as an example only. No guarantees are made that it's fit for purpose. It's not production ready and should not be used to protect critical resources**
 
-This example can be used to verifiy a JSON WebToken. To verify the token the public certificate will be retrieved from an external location.
+This example can be used to verifiy a JSON WebToken using a public certifate which is available on an external location.
 
-The documentation of this example is not ready yet.
+# How to setup
+Setup requires configurations at multiple places
+- [JWKS Edgeworker](edgeworker.md) - Configure the Edgeworker
+- [Property manager](propertymanager.md) - Configure the property
+  - Edgeworker behavior - Ensure Edgeworker is used
+  - Certificate - Proxy to fetch and cache the public certificate
 
+# Credits
 The code is based on the JWT authentication example in the [Akamai edgeworker-examples repository](https://github.com/akamai/edgeworkers-examples/tree/master/edgecompute/examples/authentication/jwt)
