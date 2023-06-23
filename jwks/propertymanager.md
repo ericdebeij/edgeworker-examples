@@ -16,7 +16,7 @@ A new rule will need to be added to your existing Property Manager property to e
 
 ## Certificates request
 1. Create a rule called /oidc/certs. 
-  - IF PATH matches /oidc/cert
+  - IF PATH matches /oidc/certs
     - Caching 1 day
     - Origin: www.googleapis.com
     - Request path: /oauth2/v3/certs
